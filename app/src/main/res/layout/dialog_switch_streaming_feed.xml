@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="@drawable/ble_popup_background"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/feed_transmission_power"
+        android:text="Transmission Power"
+        android:textColor="@color/colorGrayDark"
+        android:textSize="18sp"
+        android:padding="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/feed_implant_temperature"
+        android:text="Implant Temperature"
+        android:textSize="18sp"
+        android:padding="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/feed_implant_battery_voltage"
+        android:text="Implant Battery Voltage"
+        android:textSize="18sp"
+        android:padding="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/feed_charger_temperature"
+        android:text="Charger Temperature"
+        android:textSize="18sp"
+        android:padding="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/feed_rectifier_voltage"
+        android:text="Implant Rectifier Voltage"
+        android:textSize="18sp"
+        android:padding="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/feed_coil_voltage"
+        android:text="Coil Voltage"
+        android:textSize="18sp"
+        android:padding="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/feed_tension_battery_charger"
+        android:text="Voltage of Battery's Charger"
+        android:textColor="@color/colorGrayDark"
+        android:textSize="18sp"
+        android:padding="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

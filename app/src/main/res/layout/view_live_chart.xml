@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:paddingRight="12dp"
+        android:paddingLeft="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/colorGrayDarkMain"
+        android:foreground="?selectableItemBackground"
+        android:drawableStart="@drawable/ic_triangle"
+        android:drawablePadding="12dp"
+        android:layout_marginLeft="12dp"
+        android:letterSpacing="0.0325"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="14sp"
+        android:elevation="2dp"
+        android:text="Not Connected"
+        android:id="@+id/stream_title"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:paddingBottom="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="24dp"
+        app:layout_constraintTop_toBottomOf="@id/stream_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/graph" />
+
+</merge>

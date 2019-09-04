@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:paddingRight="12dp"
+        android:paddingLeft="12dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:background="@color/colorGrayDarkMain"
+        android:foreground="?selectableItemBackground"
+        android:layout_marginLeft="12dp"
+        android:letterSpacing="0.0325"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="14sp"
+        android:elevation="2dp"
+        android:text="POSITIONING MODE"
+        android:id="@+id/stream_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <ImageView
+        android:id="@+id/positioning_bar_icon_background"
+        android:src="@drawable/ic_card_voltage_bar_out"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stream_title"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_width="0dp"
+        android:layout_height="16dp" />
+
+    <ImageView
+        android:id="@+id/positioning_bar_icon_active"
+        android:src="@drawable/ic_card_voltage_bar_on"
+        app:layout_constraintLeft_toLeftOf="@id/positioning_bar_icon_background"
+        app:layout_constraintBottom_toBottomOf="@id/positioning_bar_icon_background"
+        android:layout_width="60dp"
+        android:layout_height="16dp" />
+
+    <ImageView
+        android:id="@+id/positioning_bar_icon_threshold"
+        android:src="@drawable/ic_triangle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/positioning_bar_icon_background"
+        app:layout_constraintHorizontal_bias="0.8"
+        android:layout_marginBottom="4dp"
+        android:scaleType="centerInside"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp" />
+
+    <TextView
+        android:text="Bad value"
+        app:layout_constraintLeft_toLeftOf="@id/positioning_bar_icon_background"
+        app:layout_constraintTop_toBottomOf="@id/positioning_bar_icon_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:text="GoodJob"
+        app:layout_constraintRight_toRightOf="@id/positioning_bar_icon_background"
+        app:layout_constraintTop_toBottomOf="@id/positioning_bar_icon_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+</merge>

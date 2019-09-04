@@ -1,0 +1,36 @@
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/home_fragment"
+        android:name="com.valotec.neurocomm_mobile_app.app.home.HomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_home" />
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/loader"
+        android:background="#A6352B15"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <ProgressBar
+            android:indeterminateTint="#F0A"
+            android:layout_gravity="center"
+            android:layout_width="130dp"
+            android:layout_height="130dp" />
+        <TextView
+            android:padding="16dp"
+            android:textStyle="bold"
+            android:background="@color/colorGrayDarkMain"
+            android:text="Deconnexion"
+            android:textSize="23sp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="140dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item >
+        <set
+            >
+            <objectAnimator
+                android:interpolator="@android:anim/linear_interpolator"
+                android:repeatCount="infinite"
+                android:duration="@android:integer/config_longAnimTime"
+                android:propertyName="rotation"
+                android:valueTo="360"
+                android:valueType="floatType"
+                />
+        </set>
+    </item>
+
+</selector>

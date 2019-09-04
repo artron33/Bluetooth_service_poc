@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.valotec.neurocomm_mobile_app"
+    >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REQUEST_COMPANION_RUN_IN_BACKGROUND" />
+
+    <uses-feature android:name="android.software.companion_device_setup" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <protected-broadcast android:name="aaa_aaa" />
+    <protected-broadcast android:name="ACTION_DISCOVER_NEAR_WYSS_BLE_IN_DIALOG" />
+    <protected-broadcast android:name="com.sonymobile.crashmonitor.CRASH_STATUS" />
+    <protected-broadcast android:name="com.sonymobile.crashmonitorsystemservice.DIR_UPDATED " />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:screenOrientation="portrait"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:persistent="true"
+        android:persistentWhenFeatureAvailable="android.hardware.bluetooth"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <activity
+            android:name="com.valotec.neurocomm_mobile_app.app.BleTestActivity"
+            android:screenOrientation="portrait"
+            android:noHistory="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <receiver android:name="poc_de_lifika.POJO.broadCastFake"
+            android:enabled="true"
+            android:exported="true"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <!--Ble Perms -->
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+                <action android:name="android.bluetooth.adapter.action.CONNECTION_STATE_CHANGED" />
+                <action android:name="android.bluetooth.device.extra.DEVICE"/>
+
+                <!--WHen your appaired device is found-->
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+
+                <!--Precise BLE Profile, to get the exact event from the system-->
+                <!--but SDCM doesn't have any profil-->
+                <action android:name="android.bluetooth.a2dp.profile.action.CONNECTION_STATE_CHANGED" />
+
+                <!--Custom Test- -->
+                <action android:name="com.valotec.neurocomm_mobile_app.aaa"/>
+                <action android:name="ACTION_YO_LO" />
+                <action android:name="com.kpbird.nlsexample.NOTIFICATION_LISTENER_SERVICE_EXAMPLE" />
+                <action android:name="aaa_aaa" />
+                <action android:name="com.myapp.ACTION_FOUND" />
+
+                <!--Boot - Reboot - QuickBoot - -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <!--For HTC devices-->
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.REBOOT"/>
+            </intent-filter>
+        </receiver>
+        <!--<action android:name="android.intent.action.AIRPLANE_MODE" />-->
+        <!--<action android:name="ACTION_CONNECTION_STATE_CHANGED" />-->
+
+        <service
+            android:name="poc_de_lifika.JobSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false"
+            android:enabled="true"
+            android:label="label JobSchedulerService"
+            android:persistentWhenFeatureAvailable="android.permission.BLUETOOTH"
+
+            />
+        <service
+            android:name="poc_de_lifika.POJO.POJOService"
+            android:permission="android.permission.REQUEST_COMPANION_RUN_IN_BACKGROUND"
+            android:exported="true"
+            android:enabled="true"
+            android:label="label JobSchedulerService33"
+            android:persistentWhenFeatureAvailable="android.permission.BLUETOOTH"
+
+            />
+        <service android:name="poc_de_lifika.MyNotificationListenerService"
+            android:label="label NotificationListener"
+            android:enabled="true"
+            android:persistentWhenFeatureAvailable="android.permission.BLUETOOTH"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
